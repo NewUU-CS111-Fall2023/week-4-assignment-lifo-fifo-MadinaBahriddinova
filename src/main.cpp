@@ -45,7 +45,28 @@ int main() {
     
     
     std::cout << "Task 4" << std::endl;
-    // call for task 4
+    int a;
+    std::cin >> a;
+    
+    std::vector<std::stack<int>> stacks(a);
+    
+    for (int i = 0; i < a; i++) {
+        int k;
+        std::cin >> k;
+        for (int j = 0; j < k; j++) {
+            int type;
+            std::cin >> type;
+            stacks[i].push(type);
+        }
+    }
+    
+    if (solve(stacks, a)) {
+        std::cout << "Problem solved successfully." << std::endl;
+    } else {
+        std::cout << "No solution found." << std::endl;
+    }
+    
+    return 0;
     std::cout << "Task 5" << std::endl;
     // call for task 5
     return 0;
