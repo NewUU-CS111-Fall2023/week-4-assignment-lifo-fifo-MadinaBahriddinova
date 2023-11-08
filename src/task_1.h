@@ -51,3 +51,32 @@ public:
         return top->a;
     }
 };
+
+int PostfixExpresion(std::string str) {
+    std::stack<int> operand;
+
+    for (int i = 0; i < str.length(); i++) {
+        if (isdigit(str[i])) {
+            operand.push(str[i] - '0'); 
+        } else {
+            int operand2 = operand.top();
+            operand.pop();
+            int operand1 = operand.top();
+            operand.pop();
+
+            switch (str[i]) {
+                case '+':
+                    operand.push(operand1 + operand2);
+                    break;
+                case '-':
+                    operand.push(operand1 - operand2);
+                    break;
+                case '*':
+                    operand.push(operand1 * operand2);
+                    break;
+            }
+        }
+    }
+
+    return operand.top();
+}
