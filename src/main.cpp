@@ -1,7 +1,7 @@
 /*
  * Author:
- * Date:
- * Name:
+ * Date:08.11.2023
+ * Name:Madina Bahriddinova
  */
 
 #include <iostream>
@@ -9,7 +9,24 @@
 
 int main() {
     std::cout << "Task 1" << std::endl;
-    // call for task 1
+    Stack stack;
+    stack.push(2);
+    stack.push(7);
+    stack.push(9);
+    stack.push(58);
+
+    std::cout << "The top element is: " << stack.topValue() << std::endl;
+
+    std::cout << "The popped element is: " << stack.pop() << std::endl;
+    std::cout << "The popped element is: " << stack.pop() << std::endl;
+
+    if(stack.isEmpty()==1){
+        std::cout<<"Stack is empty"<<std::endl;
+    }
+    else{
+        std::cout<<"Stack is not empty!";
+    }
+    return 0;
     std::cout << "Task 2" << std::endl;
     // call for task 2
     std::cout << "Task 3" << std::endl;
