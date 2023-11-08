@@ -80,3 +80,42 @@ int PostfixExpresion(std::string str) {
 
     return operand.top();
 }
+
+
+bool solve(std::vector<std::stack<int>>& stacks, int a) {
+    std::vector<int> targetPosition(a+1, 0); 
+    
+    for (int i = 1; i <= a; i++) {
+        targetPosition[i] = i;
+    }
+    
+    int from = -1, to = -1;
+    
+    for (int i = 0; i < stacks.size(); i++) {
+        std::stack<int> s = stacks[i];
+        while (!s.empty()) {
+            int container = s.top();
+            s.pop();
+            
+            if (container != targetPosition[container]) {
+                for (int j = 0; j < stacks.size(); j++) {
+                    if (!stacks[j].empty() && stacks[j].top() == targetPosition[container]) {
+                        from = i + 1;
+                        to = j + 1;
+                        break; 
+                    }
+                }
+                
+                if (from == -1 || to == -1) {
+                    return false;
+                }
+                
+                stacks[from-1].pop();
+                stacks[to-1].push(container);
+                std::cout << from << " " << to <<std::endl;
+            }
+        }
+    }
+    
+    return true;
+}
