@@ -5,6 +5,8 @@
  */
 
 #include <iostream>
+#include <stack>
+#include <string>
 #include "task_1.h"
 
 int main() {
@@ -27,8 +29,14 @@ int main() {
         std::cout<<"Stack is not empty!";
     }
     return 0;
+    
     std::cout << "Task 2" << std::endl;
-    // call for task 2
+    string str;
+    getline(cin, str);
+
+    int result = PostfixExpresion(str);
+    cout << result << endl;
+    
     std::cout << "Task 3" << std::endl;
     // call for task 3
     std::cout << "Task 4" << std::endl;
