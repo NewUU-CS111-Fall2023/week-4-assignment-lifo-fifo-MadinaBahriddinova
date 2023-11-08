@@ -31,14 +31,19 @@ int main() {
     return 0;
     
     std::cout << "Task 2" << std::endl;
-    string str;
-    getline(cin, str);
-
-    int result = PostfixExpresion(str);
-    cout << result << endl;
+    
     
     std::cout << "Task 3" << std::endl;
-    // call for task 3
+    std::string str;
+    std::getline(std::cin, str);
+
+    int result = PostfixExpresion(str);
+
+    std::cout << result << std::endl;
+
+    return 0;
+    
+    
     std::cout << "Task 4" << std::endl;
     // call for task 4
     std::cout << "Task 5" << std::endl;
